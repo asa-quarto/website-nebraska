@@ -45,7 +45,8 @@ install.packages(pkg_list)
 
 -   Sli.do:
 
-    -   Anonymous questions for real-time feedback
+    -   Anonymous questions to go through at the end of a module / at the end of the day
+    -   Use for not time pressing questions / things you're curious about beyond what we're explicitly covering
     -   Got to [https://slido.com](https://slido.com/) and use code: `#quarto`
     -   Or use this direct link <https://app.sli.do/event/wkQ3fmnKafwzDNKQNXK7FF>
 
@@ -89,13 +90,22 @@ Meet 1-2 people around you!
 countdown(minutes = 2)
 ```
 
-## Workshop components
+## Workshop structure
 
 -   **My turn:** Lecture segments + live coding
 
 -   **Our turn:** Live coding + follow along
 
 -   **Your turn:** Exercises
+
+## Getting help
+
+- During **my turn** and **our turn** segments -- raise your hand
+
+- During **your turn** segments -- also feel free to raise your hand for questions but use the stickies to signal:
+
+    - Light green: I'd like some help / I'm stuck / I'm lost
+    - Dark green: I'm done
 
 # Hello Quarto
 
@@ -200,30 +210,3 @@ Let's get started!
 Sit back and enjoy!
 :::
 
-# Parting remarks
-
-## Quarto CLI...
-
-orchestrates each step of rendering
-
-![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](images/horst_qmd_render_schema.png){fig-alt="A schematic representing rendering of Quarto documents from .qmd, to knitr or jupyter, to plain text markdown, then converted by pandoc into any number of output types including html, PDF, or Word document."}
-
-## Learning more
-
-[https://quarto.org](https://quarto.org/)
-
-```{=html}
-<iframe src="https://quarto.org/" width="100%" height="600" title="Quarto Website"></iframe>
-```
-## Follow up with...
-
-the Quarto Blog: <https://quarto.org/docs/blog>
-
-```{=html}
-<iframe src="https://quarto.org/docs/blog/" width="100%" height="600" title="Quarto 1.3 Pre-release notes"></iframe>
-```
-## Thank you! {background-image="images/thank-you.png"}
-
-🐘 [https://fosstodon.org/\@minecr](https://fosstodon.org/@minecr)
-
-🐦 [\@minebocek](https://twitter.com/minebocek)

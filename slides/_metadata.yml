@@ -1,4 +1,5 @@
-institute: "Duke University + Posit <br> ASA Traveling Course: From R Markdown to Quarto"
+subtitle: "ASA Traveling Course: From R Markdown to Quarto"
+institute: "Duke University + Posit"
 author: "Dr. Mine Çetinkaya-Rundel"
 date: "2023-04-28"
 footer: "[🔗 ADD LINK](https://QUARTO.org/)"

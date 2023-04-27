@@ -1,0 +1,14 @@
+{
+  "hash": "3cb2ad6ad7f137208ebd37861835125e",
+  "result": {
+    "markdown": "---\ntitle: \"Pre-workshop instructions\"\n---\n\n\nPrior to the workshop, please complete the following steps:\n\n-   Download and install the latest versions of R, RStudio, and Quarto:\n\n    -   R `4.2.3` or above: <https://cran.r-project.org>\n    -   RStudio `2023.03.0+386` or above: <https://posit.co/download/rstudio-desktop>\n    -   Quarto `1.3.321`: <https://quarto.org/docs/get-started>\n\n-   Install the following packages:\n\n\n::: {.cell}\n\n```{.r .cell-code}\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\", \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

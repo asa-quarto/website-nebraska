@@ -8,15 +8,15 @@ This workshop is designed for those who want to take their R Markdown skills and
 
 ## Schedule
 
-|Time       | Module   |
-|-----------|----------|
-|9-10:30    | Module 1 |
-|10:30-11   | Break    |
-|11-12:30   | Module 2 |
-|12:30-1:30 | Lunch    |
-|1:30-3     | Module 3 |
-|3-3:30     | Break    |
-|3:30-5     | Module 4 |
+|Time          | Module   |
+|--------------|----------|
+|09:00 - 10:30 | Module 1 |
+|10:30 - 11:00 | Break    |
+|11:00 - 12:30 | Module 2 |
+|12:30 - 13:30 | Lunch    |
+|13:30 - 15:00 | Module 3 |
+|15:00 - 15:30 | Break    |
+|15:30 - 17:00 | Module 4 |
 
 ## Instructors
 

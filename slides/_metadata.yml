@@ -1,0 +1,15 @@
+institute: "Duke University + Posit <br> ASA Traveling Course: From R Markdown to Quarto"
+author: "Dr. Mine Çetinkaya-Rundel"
+date: "2023-04-28"
+footer: "[🔗 ADD LINK](https://QUARTO.org/)"
+logo: "../images/quarto.png"
+format:
+  revealjs:
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true

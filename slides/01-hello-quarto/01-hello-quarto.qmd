@@ -1,0 +1,229 @@
+---
+title: "Hello Quarto"
+format: revealjs
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# set width of code output
+options(width = 65)
+
+# load background packages
+library(countdown)
+```
+
+# Pre-workshop instructions
+
+## While you wait for the workshop to begin... {.smaller}
+
+-   Please make sure you download and install the latest versions of R, RStudio, and Quarto:
+
+    -   R: <https://cran.r-project.org>
+    -   RStudio: <https://posit.co/download/rstudio-desktop>
+    -   Quarto: <https://quarto.org/docs/get-started>
+
+-   Please also install the following packages:
+
+```{r}
+#| label: pkg-list
+#| eval: false
+
+pkg_list <- c(
+  "tidyverse", "gt", "reactable", "ggiraph",
+  "here", "palmerpenguins", "fs", "skimr"
+  )
+install.packages(pkg_list)
+```
+
+# Welcome
+
+## Logistics
+
+-   WiFi: \_\_\_
+
+-   Sli.do:
+
+    -   Anonymous questions for real-time feedback
+    -   Got to [https://slido.com](https://slido.com/) and use code: `#quarto`
+    -   Or use this direct link <https://app.sli.do/event/wkQ3fmnKafwzDNKQNXK7FF>
+
+-   Surroundings: \_\_\_
+
+## Code of Conduct {.smaller}
+
+> The American Statistical Association (ASA) is committed to providing an atmosphere in which personal respect and intellectual growth are valued and the free expression and exchange of ideas are encouraged. Consistent with this commitment, it is the policy of the ASA that all participants in ASA activities enjoy a welcoming environment free from unlawful discrimination, harassment, and retaliation. We strive to be a community that welcomes and supports people of all backgrounds and identities. This includes, but is not limited to, members of any race, ethnicity, culture, national origin, color, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
+
+::: aside
+[ASA Code of Conduct](https://www.amstat.org/meetings/code-of-conduct)
+:::
+
+## Expected Behavior {.smaller}
+
+> -   Model and support the norms of respect necessary to promote the conditions for healthy exchange of scientific ideas.
+>
+> -   In speech or conduct, do not insult or disparage other participants.
+>
+> -   Be conscious of hierarchical structures, specifically the existence of stark power differentials between students, early career statisticians and established career statisticians---noting that fear of retaliation from more established statisticians can make it difficult for students and early career statisticians to express discomfort, rebuff unwelcome advances, and report violations of the conduct policy.
+>
+> -   Be sensitive to indications that may suggest that individuals are feeling unwelcome.
+
+::: aside
+[ASA Code of Conduct](https://www.amstat.org/meetings/code-of-conduct)
+:::
+
+## About me
+
+-   Professor of the Practice, Department of Statistical Science, Duke University
+-   Developer Educator, Posit
+-   R Markdown user/educator for 10+ years, Quarto user/educator for 1+ years
+
+## About you
+
+::: task
+Meet 1-2 people around you!
+:::
+
+```{r}
+countdown(minutes = 2)
+```
+
+## Workshop components
+
+-   **My turn:** Lecture segments + live coding
+
+-   **Our turn:** Live coding + follow along
+
+-   **Your turn:** Exercises
+
+# Hello Quarto
+
+## Meeting you where you are
+
+::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+I'll **assume** you
+
+-   know some R
+
+-   have worked in RStudio
+
+-   want to learn about Quarto
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment .fade-in}
+I'll **teach** you
+
+-   Quarto syntax and formats
+
+-   More Markdown
+
+-   Even more R along the way!
+:::
+:::
+:::
+
+## Checking in one more time {.smaller}
+
+::: task
+Have you completed the following?
+
+-   Download and install the latest versions of R, RStudio, and Quarto:
+
+    -   R: <https://cran.r-project.org>
+    -   RStudio: <https://posit.co/download/rstudio-desktop>
+    -   Quarto: <https://quarto.org/docs/get-started>
+
+-   Install the following packages:
+
+    ```{r}
+    #| eval: false
+    #| ref.label: pkg-list
+    ```
+:::
+
+. . .
+
+::: {.hand-blue-large style="text-align: center;"}
+Let's get started!
+:::
+
+# What is Quarto?
+
+## Quarto ...
+
+-   is a new, open-source, scientific, and technical publishing system
+-   aims to make the process of creating and collaborating dramatically better
+
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](images/horst_quarto_schematic.png){fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto." fig-align="center"}
+
+## Quarto ... {.center auto-animate="true"}
+
+**unifies** + **extends** the R Markdown ecosystem
+
+## Quarto ... {.center auto-animate="true"}
+
+**unifies** + **extends** the R Markdown ecosystem
+
+<br>
+
+**unifies** for people who love R Markdown
+
+## Quarto ... {.center auto-animate="true"}
+
+**unifies** + **extends** the R Markdown ecosystem
+
+<br>
+
+**unifies** for people who love R Markdown
+
+**extends** for people who don't know R Markdown
+
+## Quarto unifies + extends R Markdown
+
+::: incremental
+-   Consistent implementation of attractive and handy features across outputs: tabsets, code-folding, syntax highlighting, etc.
+-   More accessible defaults as well as better support for accessibility
+-   Guardrails, particularly helpful for new learners: YAML completion, informative syntax errors, etc.
+-   Support for other languages like Python, Julia, Observable, and more via Jupyter engine for executable code chunks.
+:::
+
+## A tour of Quarto
+
+<br><br>
+
+::: {.hand-blue-large style="text-align: center;"}
+Sit back and enjoy!
+:::
+
+# Parting remarks
+
+## Quarto CLI...
+
+orchestrates each step of rendering
+
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](images/horst_qmd_render_schema.png){fig-alt="A schematic representing rendering of Quarto documents from .qmd, to knitr or jupyter, to plain text markdown, then converted by pandoc into any number of output types including html, PDF, or Word document."}
+
+## Learning more
+
+[https://quarto.org](https://quarto.org/)
+
+```{=html}
+<iframe src="https://quarto.org/" width="100%" height="600" title="Quarto Website"></iframe>
+```
+## Follow up with...
+
+the Quarto Blog: <https://quarto.org/docs/blog>
+
+```{=html}
+<iframe src="https://quarto.org/docs/blog/" width="100%" height="600" title="Quarto 1.3 Pre-release notes"></iframe>
+```
+## Thank you! {background-image="images/thank-you.png"}
+
+🐘 [https://fosstodon.org/\@minecr](https://fosstodon.org/@minecr)
+
+🐦 [\@minebocek](https://twitter.com/minebocek)

@@ -6,6 +6,18 @@ Materials for the "From R Markdown to Quarto" ASA Traveling workshop for the Neb
 
 This workshop is designed for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown. Quarto is an open-source scientific and technical publishing system that offers multilingual programming language support to create dynamic and static documents, books, presentations, blogs, and other online resources. In this workshop you will learn how to apply your reproducible authoring skills to the Quarto format and learn about new tools and workflows for authoring with Quarto in RStudio. You will learn to create static documents as well as slide presentations. The workshop will also introduce you to Quarto projects which you can use to build websites and write blogs and books. Finally, you will learn various ways to deploy and publish your Quarto projects on the web.
 
+## Schedule
+
+|Time       | Module   |
+|-----------|----------|
+|9-10:30    | Module 1 |
+|10:30-11   | Break    |
+|11-12:30   | Module 2 |
+|12:30-1:30 | Lunch    |
+|1:30-3     | Module 3 |
+|3-3:30     | Break    |
+|3:30-5     | Module 4 |
+
 ## Instructors
 
 [Mine Çetinkaya-Rundel](https://mine-cr.com/) is Professor of the Practice at Duke University and Developer Educator at Posit. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM. Mine is a Fellow of the ASA and Elected Member of the ISI as well as the winner of the 2021 Robert V. Hogg Award for For Excellence in Teaching Introductory Statistics.

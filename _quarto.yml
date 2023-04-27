@@ -1,0 +1,63 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "From R Markdown to Quarto"
+  description: "ASA Traveling Course 2023 - From R Markdown to Quarto"
+  site-url: "http://quarto.org/"
+
+  repo-url: https://github.com/mine-cetinkaya-rundel/quarto-asa-nebraska
+  repo-actions: [edit, issue]
+
+  open-graph: true
+  twitter-card:
+    creator: "@minebocek"
+    image: "images/twitter-card.png"
+
+  sidebar:
+    background: "#D1D9E3"
+    logo: "images/logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/mine-cetinkaya-rundel/quarto-asa-nebraska
+        text: "GitHub organization"
+      - icon: code-square
+        href: https://posit.cloud
+        text: "Posit Cloud"
+
+    style: docked
+    search: true
+    collapse-level: 2
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: pre-work.qmd
+        text: Pre-work
+      - section: "Modules"
+        contents:
+          - href: slides/01-hello-quarto/01-hello-quarto.qmd
+            text: Hello Quarto
+
+  page-footer:
+    right: "This page is built with 💛 and [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2023, Mine Çetinkaya-Rundel + Andrew Bray"
+    background: "#D1D9E3" # Arylide Yellow
+
+format:
+  html:
+    theme:
+      light: [cosmo, style/sta313.scss]
+      dark: [cosmo, style/sta313.scss, style/dark.scss]
+    linkcolor: "#58779b" # Glossy Grape
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Atkinson Hyperlegible"
+
+execute:
+  freeze: auto
+
+editor: visual

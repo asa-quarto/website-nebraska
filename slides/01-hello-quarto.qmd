@@ -1,0 +1,51 @@
+---
+title: "Hello Quarto"
+author: "Mine Çetinkaya-Rundel"
+date: "2023-04-28"
+format: revealjs
+editor: visual
+---
+
+# Welcome
+
+## Logistics
+
+-   WiFi: \_\_\_
+
+-   Sli.do:
+
+    -   Anonymous questions for real-time feedback
+    -   Got to [https://slido.com](https://slido.com/) and use code: `#quarto`
+    -   Or use this direct link <https://app.sli.do/event/wkQ3fmnKafwzDNKQNXK7FF>
+
+-   Surroundings: \_\_\_
+
+## Code of Conduct {.smaller}
+
+> The American Statistical Association (ASA) is committed to providing an atmosphere in which personal respect and intellectual growth are valued and the free expression and exchange of ideas are encouraged.
+> Consistent with this commitment, it is the policy of the ASA that all participants in ASA activities enjoy a welcoming environment free from unlawful discrimination, harassment, and retaliation.
+> We strive to be a community that welcomes and supports people of all backgrounds and identities.
+> This includes, but is not limited to, members of any race, ethnicity, culture, national origin, color, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion, and mental and physical ability.
+
+::: aside
+[ASA Code of Conduct](https://www.amstat.org/meetings/code-of-conduct)
+:::
+
+## Expected Behavior {.smaller}
+
+> -   Model and support the norms of respect necessary to promote the conditions for healthy exchange of scientific ideas.
+>
+> -   In speech or conduct, do not insult or disparage other participants.
+>
+> -   Be conscious of hierarchical structures, specifically the existence of stark power differentials between students, early career statisticians and established career statisticians---noting that fear of retaliation from more established statisticians can make it difficult for students and early career statisticians to express discomfort, rebuff unwelcome advances, and report violations of the conduct policy.
+>
+> -   Be sensitive to indications that may suggest that individuals are feeling unwelcome.
+
+::: aside
+[ASA Code of Conduct](https://www.amstat.org/meetings/code-of-conduct)
+:::
+
+## About me
+
+-   Professor of the Practice, Department of Statistical Science, Duke University
+-   Developer Educator, Posit

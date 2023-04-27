@@ -16,13 +16,13 @@ This workshop is designed for those who want to take their R Markdown skills and
 | 12:30 - 13:30 | Lunch                         |
 | 13:30 - 15:00 | Presentations and manuscripts |
 | 15:00 - 15:30 | Break                         |
-| 15:30 - 17:00 | Websites and publishing       |
+| 15:30 - 17:00 | Websites                      |
 
 ## Instructors
 
-[Mine Çetinkaya-Rundel](https://mine-cr.com/) is Professor of the Practice at Duke University and Developer Educator at Posit. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM. Mine is a Fellow of the ASA and Elected Member of the ISI as well as the winner of the 2021 Robert V. Hogg Award for For Excellence in Teaching Introductory Statistics.
+[Mine Çetinkaya-Rundel](https://mine-cr.com/) is a Professor of the Practice ce at Duke University and a Developer Educator at a Posit. Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and underrepresented minounderrepresentedine is a Fellow of the ASA and Elected Member of the ISI as well as the winner of the 2021 Robert V. Hogg Award for For Excellence in Teaching Introductory Statistics.
 
-[Andrew Bray](https://bids.berkeley.edu/people/andrew-bray) is an Associate Teaching Professor in the Department of Statistics at UC Berkeley where he develops and teaches courses in statistics and data science. His research interests include statistical computing, data privacy, and applications of statistical models to environmental science. He is one of the authors of the infer R package for resampling based inference and an enthusiastic user of all things R Markdown / Quarto.
+[Andrew Bray](https://bids.berkeley.edu/people/andrew-bray) is an Associate Teaching Professor in the Department of Statistics at UC Berkeley where he develops and teaches courses in statistics and data science. His research interests include statistical computing, data privacy, and applications of statistical models to environmental science. He is one of the authors of the infer R package for resampling-based inference and an enthusiastic user of all things R Markdown / Quarto.
 
 ------------------------------------------------------------------------
 

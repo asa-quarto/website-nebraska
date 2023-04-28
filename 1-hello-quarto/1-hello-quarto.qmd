@@ -33,30 +33,29 @@ library(countdown)
 
 ## While you wait for the workshop to begin... {.smaller}
 
--   Please make sure you download and install the latest versions of R, RStudio, and Quarto:
+-   Download and install the latest versions of R, RStudio, and Quarto:
 
     -   R: <https://cran.r-project.org>
     -   RStudio: <https://posit.co/download/rstudio-desktop>
     -   Quarto: <https://quarto.org/docs/get-started>
 
--   Please also install the following packages:
+-   Install the following packages:
 
 ```{r}
 #| label: pkg-list
 #| eval: false
 
-pkg_list <- c(
-  "tidyverse", "gt", "reactable", "ggiraph",
-  "here", "palmerpenguins", "fs", "skimr"
-  )
+pkg_list <- c("tidyverse", "gt", "ggthemes", "palmerpenguins", "quarto", "here")
 install.packages(pkg_list)
 ```
+
+-   Download `exercises.zip` at <https://mine.quarto.pub/quarto-asa-nebraska/exercises.zip> and unzip it on your Desktop or somewhere you can easily locate on your computer. Then, go to RStudio \> File \> New Project \> Existing Directory and navigate to the unzipped `exercises` folder and create an RStudio project in there and open it.
 
 # Welcome
 
 ## Logistics
 
--   WiFi: \_\_\_
+-   WiFi: `TBA`
 
 -   Sli.do:
 
@@ -65,7 +64,7 @@ install.packages(pkg_list)
     -   Got to [https://slido.com](https://slido.com/) and use code: `#quarto`
     -   Or use this direct link <https://app.sli.do/event/wkQ3fmnKafwzDNKQNXK7FF>
 
--   Surroundings: \_\_\_
+-   Surroundings: Exits, restrooms, etc.
 
 ## Code of Conduct {.smaller}
 
@@ -171,6 +170,8 @@ Have you completed the following?
     #| eval: false
     #| ref.label: pkg-list
     ```
+
+-   Download `exercises.zip` at <https://mine.quarto.pub/quarto-asa-nebraska/exercises.zip> and unzip it on your Desktop or somewhere you can easily locate on your computer. Then, go to RStudio \> File \> New Project \> Existing Directory and navigate to the unzipped `exercises` folder and create an RStudio project in there and open it.
 :::
 
 . . .
@@ -261,10 +262,11 @@ countdown(minutes = 10)
 
 Quarto is a command line interface (CLI) that renders plain text formats (`.qmd`, `.rmd`, `.md`) OR mixed formats (`.ipynb`/Jupyter notebook) into static PDF/Word/HTML reports, books, websites, presentations and more.
 
-```{py}
+```{bash}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "|1|4|12|17|18"
+
 mine$ quarto --help
 
   Usage:   quarto 

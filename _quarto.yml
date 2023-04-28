@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - exercises.zip
 
 website:
   page-navigation: true
@@ -41,6 +43,10 @@ website:
             text: Hello Quarto
           - href: 2-documents/index.qmd
             text: Documents
+          - href: 3-presentations/index.qmd
+            text: Presentations
+          - href: 4-websites/index.qmd
+            text: Websites
 
   page-footer:
     right: "This page is built with 💛 and [Quarto](https://quarto.org/)."

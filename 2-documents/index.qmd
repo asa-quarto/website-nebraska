@@ -18,3 +18,7 @@ title: "Documents"
 -   <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/exercises/callout-boxes.qmd">{{< fa download >}} `callout-boxes.qmd`</i></a>
 
 -   <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/exercises/tables-figures.qmd">{{< fa download >}} `tables-figures.qmd`</i></a>
+
+    -   <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/exercises/images/r-logo.png">{{< fa download >}} `r-logo.png`</i></a>
+
+    -   <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/exercises/images/quarto-logo.png">{{< fa download >}} `quarto-logo.png`</i></a>

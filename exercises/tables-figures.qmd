@@ -1,5 +1,5 @@
 ---
-title: Tables and figures
+title: "Tables and figures"
 format: html
 ---
 

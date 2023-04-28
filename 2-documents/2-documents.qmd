@@ -959,3 +959,12 @@ head(penguins) |>
 
 countdown(minutes = 10)
 ```
+
+# Wrap up
+
+## Questions
+
+::: task
+Any questions / anything you'd like to review before we wrap up this module?
+:::
+

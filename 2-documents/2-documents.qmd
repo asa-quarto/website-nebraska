@@ -1,0 +1,1109 @@
+---
+title: "Documents"
+subtitle: "ASA Traveling Course: From R Markdown to Quarto"
+institute: "Duke University + Posit"
+author: "Dr. Mine Çetinkaya-Rundel"
+date: "2023-04-28"
+footer: "[🔗 mine.quarto.pub/quarto-asa-nebraska](https://mine.quarto.pub/quarto-asa-nebraska)"
+logo: "../images/logo.png"
+format:
+  revealjs:
+    theme: ../style/slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# set width of code output
+options(width = 65)
+
+# load background packages
+library(countdown)
+```
+
+# Anatomy of a Quarto document
+
+## Components
+
+1.  Metadata: YAML
+
+2.  Text: Markdown
+
+3.  Code: Executed via `knitr` or `jupyter`
+
+. . .
+
+**Weave it all together**, and you have beautiful, powerful, and useful outputs!
+
+## Literate programming {.smaller}
+
+Literate programming is writing out the program logic in a human language with included (separated by a primitive markup) code snippets and macros.
+
+````         
+---
+title: "ggplot2 demo"
+date: "4/28/2023"
+format: html
+---
+
+## MPG
+
+There is a relationship between city and highway mileage.
+
+```{{r}}
+#| label: fig-mpg
+
+library(ggplot2)
+
+ggplot(mpg, aes(x = cty, y = hwy)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+````
+
+::: .aside
+Source: <https://en.wikipedia.org/wiki/Literate_programming>
+:::
+
+# Metadata
+
+## YAML
+
+"Yet Another Markup Language" or "YAML Ain't Markup Language" is used to provide document level metadata.
+
+``` yaml
+---
+key: value
+---
+```
+
+## Output options
+
+``` yaml
+---
+format: something
+---
+```
+
+. . .
+
+<br>
+
+``` yaml
+---
+format: html
+---
+```
+
+``` yaml
+---
+format: pdf
+---
+```
+
+``` yaml
+---
+format: revealjs
+---
+```
+
+## Output option arguments
+
+Indentation matters!
+
+``` yaml
+---
+format: 
+  html:
+    toc: true
+    code-fold: true
+---
+```
+
+## YAML validation {.smaller}
+
+- Invalid: No space after `:`
+
+``` yaml
+---
+format:html
+---
+```
+
+- Invalid: Read as missing
+
+``` yaml
+---
+format:
+html
+---
+```
+
+- Valid, but needs next object
+
+``` yaml
+---
+format: 
+  html:
+---
+```
+
+## YAML validation {.smaller}
+
+There are multiple ways of formatting valid YAML:
+
+- Valid: There's a space after `:`
+
+``` yaml
+format: html
+```
+
+- Valid: There are 2 spaces a new line and no trailing `:`
+
+``` yaml
+format:
+  html
+```
+
+- Valid: `format: html` with selections made with proper indentation
+
+``` yaml
+format: 
+  html:
+    toc: true
+```
+
+## Why YAML?
+
+To avoid manually typing out all the options, every time when rendering via the CLI:
+
+. . .
+
+``` bash
+quarto render document.qmd --to html
+```
+
+<br>
+
+. . .
+
+``` bash
+quarto render document.qmd --to html -M code-fold:true
+```
+
+<br>
+
+. . .
+
+``` bash
+quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
+```
+
+## Quarto linting
+
+Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs.
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+![](images/lint-rstudio.png)
+:::
+
+::: {.column width="50%"}
+![](images/lint-vscode.png)
+:::
+:::
+
+::: aside
+Source: <https://en.wikipedia.org/wiki/Lint_(software)>
+:::
+
+## Quarto YAML Intelligence
+
+RStudio + VSCode provide rich tab-completion - start a word and tab to complete, or <kbd>`Ctrl + space`</kbd> to see all available options.
+
+<br>
+
+![](images/quarto-tab-complete.png){fig-align="center" width="600"}
+
+## Your turn
+
+::: task
+-   Open a new Quarto document in RStudio.
+-   Try <kbd>`Ctrl + space`</kbd> to see the available YAML options.
+-   Try out the tab-completion of any options you remember.
+-   You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.html) as needed.
+:::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3)
+```
+
+## List of valid YAML fields
+
+- Many YAML fields are common across various outputs
+
+- But also each output type has its own set of valid YAML fields and options
+
+- Definitive list: [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
+
+# Text
+
+## Text Formatting
+
++---------------------------------+-------------------------------+
+| Markdown Syntax                 | Output                        |
++=================================+===============================+
+| ```                             | *italics* and **bold**        |
+| *italics* and **bold**          |                               |
+| ```                             |                               |
++---------------------------------+-------------------------------+
+| ```                             | superscript^2^ / subscript~2~ |
+| superscript^2^ / subscript~2~   |                               |
+| ```                             |                               |
++---------------------------------+-------------------------------+
+| ```                             | ~~strikethrough~~             |
+| ~~strikethrough~~               |                               |
+| ```                             |                               |
++---------------------------------+-------------------------------+
+| ```                             | `verbatim code`               |
+| `verbatim code`                 |                               |
+| ```                             |                               |
++---------------------------------+-------------------------------+
+
+: {tbl-colwidths="[50,50]"}
+
+## Headings {.smaller}
+
++-------------------+---------------------+
+| Markdown Syntax   | Output              |
++===================+=====================+
+| ```               | # Header 1          |
+| # Header 1        |                     |
+| ```               |                     |
++-------------------+---------------------+
+| ```               | ## Header 2         |
+| ## Header 2       |                     |
+| ```               |                     |
++-------------------+---------------------+
+| ```               | ### Header 3        |
+| ### Header 3      |                     |
+| ```               |                     |
++-------------------+---------------------+
+| ```               | #### Header 4       |
+| #### Header 4     |                     |
+| ```               |                     |
++-------------------+---------------------+
+| ```               | ##### Header 5      |
+| ##### Header 5    |                     |
+| ```               |                     |
++-------------------+---------------------+
+| ```               | ###### Header 6     |
+| ###### Header 6   |                     |
+| ```               |                     |
++-------------------+---------------------+
+
+: {tbl-colwidths="[50,50]"}
+
+## Links {.smaller}
+
+There are several types of "links" or hyperlinks.
+
+::: columns
+::: {.column width="60%"}
+**Markdown**
+
+``` markdown
+You can embed [named hyperlinks](https://quarto.org/),
+direct urls like <https://quarto.org/>, and links to 
+[other places](#quarto-anatomy) in 
+the document. The syntax is similar for embedding an
+inline image: ![Penguins playing with ball](images/penguins-quarto-ball.png).
+```
+:::
+
+::: {.column .fragment width="40%"}
+**Output**
+
+You can embed [named hyperlinks](https://quarto.org/),
+direct urls like <https://quarto.org/>, and links to 
+[other places](#quarto-anatomy) in 
+the document. The syntax is similar for embedding an
+inline image: ![Penguins playing with ball](images/penguins-quarto-ball.png){style="width:250px;"}.
+:::
+:::
+
+## Lists {.smaller}
+
+Unordered list:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Markdown:**
+
+``` markdown               
+-   unordered list         
+    -   sub-item 1         
+    -   sub-item 1         
+        -   sub-sub-item 1 
+``` 
+:::
+
+::: {.column width="50%" .fragment fragment-index=1}
+**Output**
+
+ -   unordered list         
+     -   sub-item 1         
+     -   sub-item 1         
+         -   sub-sub-item 1 
+:::
+
+::::
+
+Ordered list:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Markdown:**
+
+``` markdown               
+1. ordered list            
+2. item 2                  
+    i. sub-item 1          
+         A.  sub-sub-item 1
+``` 
+:::
+
+::: {.column width="50%" .fragment fragment-index=2}
+**Output**
+
+1. ordered list            
+2. item 2                  
+    i. sub-item 1          
+         A.  sub-sub-item 1
+:::
+
+::::
+
+## Lists {.smaller}
+
+Continuing lists:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Markdown:**
+
+``` markdown               
+(@)  A list whose numbering
+                           
+continues after
+                           
+(@)  an interruption
+``` 
+:::
+
+::: {.column width="50%" .fragment fragment-index=1}
+**Output**
+
+(@)  A list whose numbering
+                           
+continues after
+                           
+(@)  an interruption
+:::
+
+::::
+
+Terms:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Markdown:**
+
+``` markdown               
+term        
+: definition
+``` 
+:::
+
+::: {.column width="50%" .fragment fragment-index=2}
+**Output**
+
+term        
+: definition
+:::
+
+::::
+
+## Quotes
+
+**Markdown:**
+
+``` markdown
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. 
+> - Donald Knuth, Literate Programming
+```
+
+. . .
+
+**Output:**
+
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. 
+> - Donald Knuth, Literate Programming
+
+::: aside
+"Literate Programming", The Computer Journal 27 (1984), p. 97. (Reprinted in Literate Programming, 1992, p. 99.) Literate Programming (1984)
+:::
+
+## Tables
+
+**Markdown:**
+
+``` markdown
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+```
+
+. . .
+
+**Output:**
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+
+## Your turn
+
+::: task
+-   Open `markdown-syntax.qmd` in RStudio.
+-   Explore, add to it, try out new syntax, exchange one new thing you've learned with your neighbor.
+:::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 5)
+```
+
+## Grid tables
+
+**Markdown:**
+
+``` markdown
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
+
+: Sample grid table.
+```
+
+## Grid tables
+
+**Output:**
+
++---------------+---------------+----------------------+
+| Fruit         | Price         | Advantages           |
++===============+===============+======================+
+| Bananas       | \$1.34        | -   built-in wrapper |
+|               |               | -   bright color     |
++---------------+---------------+----------------------+
+| Oranges       | \$2.10        | -   cures scurvy     |
+|               |               | -   tasty            |
++---------------+---------------+----------------------+
+
+: Sample grid table.
+
+## Grid tables: Alignment
+
+- Alignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:
+
+```         
++---------------+---------------+--------------------+
+| Right         | Left          | Centered           |
++==============:+:==============+:==================:+
+| Bananas       | $1.34         | built-in wrapper   |
++---------------+---------------+--------------------+
+```
+
+. . .
+
+- For headerless tables, the colons go on the top line instead:
+
+```         
++--------------:+:--------------+:------------------:+
+| Right         | Left          | Centered           |
++---------------+---------------+--------------------+
+```
+
+## Grid tables: Authoring
+
+- Note that grid tables are quite awkward to write with a plain text editor because unlike pipe tables, the column indicators must align. 
+
+- The Visual Editor can assist in making these tables!
+
+## Tables from code {.smaller}
+
+The **knitr** package can turn data frames into tables with `knitr::kable()`:
+
+```{r}
+library(knitr)
+
+head(mtcars) |> 
+  kable()
+```
+
+## Tables from code {.smaller}
+
+If you want fancier tables, try the **gt** package and [all that it offers](https://gt.rstudio.com/)!
+
+```{r}
+#| output-location: column-fragment
+
+library(gt)
+
+head(mtcars) |> 
+  gt() |>
+  tab_style(
+    style = list(
+      cell_fill(color = "pink"),
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = mpg,
+      rows = mpg < 20
+    )
+  )
+```
+
+. . .
+
+
+
+## Divs and Spans
+
+Pandoc and therefore Quarto can parse ["fenced `Div` blocks"](https://pandoc.org/MANUAL.html#divs-and-spans)
+
+. . .
+
+```         
+::: {.border}
+This content can be styled with a border
+:::
+```
+
+. . .
+
+::: {style="border-left:10px solid red"}
+This content can be styled with a border
+:::
+
+```         
+This is text with [special]{style="color:red;"} formatting.
+```
+
+. . .
+
+This is text with [special]{style="color:red;"} formatting.
+
+. . .
+
+You're not limited to HTML/CSS concepts - Pandoc and Quarto also have "attributes" that can be assigned in this way.
+
+## Divs and Spans
+
+-   You can think of a `:::` div as a HTML `<div>` but it can also apply in specific situations to content in PDF
+-   Similarly, `[text]{.class}` spans can be thought of a `<span .class>Text</span>` but again are a bit more transferable if using Pandoc/Quarto native attributes.
+
+. . .
+
+The following, if specifying a Quarto class can often apply between formats.
+
+``` code
+::: {.unnumbered .unlisted}
+Text
+:::
+```
+
+. . .
+
+While the following is hard-coded as HTML.
+
+``` html
+<div style="font-size: 200px;">Text</div>
+```
+
+## Callout Blocks
+
+```         
+:::{.callout-note}
+Note that there are five types of callouts, including: 
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+```
+
+::: callout-note
+## Note
+
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+::: callout-warning
+## Warning
+
+Callouts provide a simple way to attract attention, for example, to this warning.
+:::
+
+::: callout-important
+## This is important
+
+Danger, callouts will really improve your writing.
+:::
+
+::: callout-tip
+## Tip with caption
+:::
+
+::: callout-caution
+## Caution, under construction
+
+Here is something under construction
+:::
+
+## Callout markdown syntax
+
+```         
+:::{.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+
+:::{.callout-tip}
+## Tip With Caption
+
+This is an example of a callout with a caption.
+:::
+```
+
+<br> <br>
+
+```         
+:::{.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+```
+
+# Your turn
+
+::: aside
+-   Open `callout-boxes.qmd` and render the document.
+-   Try changing the types of callouts/remove them from code boxes and then re=render.
+-   Change the format to PDF and re-render.
+:::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3)
+```
+
+## Figures
+
+Basic markdown syntax:
+
+```         
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)
+```
+
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png)
+
+## Figures w/ code
+
+```{r}
+#| echo: fenced
+#| fig-width: 4
+#| fig-align: right
+
+knitr::include_graphics("images/penguins-quarto-ball.png")
+```
+
+## Fragments/spans
+
+::: columns
+::: {.column width="50%"}
+```         
+![Penguins playing with a Quarto ball](images/penguins-quarto-ball.png){fig-align="left"}
+```
+
+![](images/penguins-quarto-ball.png)
+:::
+
+::: {.column width="50%"}
+```         
+![](images/penguins-quarto-ball.png){fig-align="right" fig-alt="Illustration of two penguins playing with a Quarto ball."}
+```
+
+![](images/penguins-quarto-ball.png){fig-align="right" fig-alt="Illustration of two penguins playing with a Quarto ball."}
+:::
+:::
+
+## Subfigures fenced div class
+
+```         
+::: {#fig-penguins layout-ncol=2}
+
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+Two penguins
+
+:::
+```
+
+## Subfigures
+
+::: {#fig-penguins layout-ncol="2"}
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-sleep width="250px"}
+
+Two penguins
+:::
+
+## Subfigures
+
+<iframe src="static/sub-figure.html" height="800px" width="1200px">
+
+</iframe>
+
+## Paths
+
+Quarto documents reference from their existing folder/directory.
+
+. . .
+
+You can reference sub-directories/folders easily:
+
+`![](images/image.png)`
+
+. . .
+
+But what about going "backwards" i.e. to a parent directory?
+
+## Absolute vs relative paths
+
+In places like markdown, YAML, or the command line/shell/terminal you'll need to use absolute or relative file paths:
+
+. . .
+
+-   Absolute = BAD: `"/Users/mine/quarto-asa-nebraska"` - Whose computer will this work on?
+
+-   Relative = BETTER:
+
+    -   `"../` = up one directory, `../../` = up two directories, etc.
+    -   `/..` or `/` = start from `root` directory of your current computer
+
+## Referencing paths in R code
+
+In code you can use `here::here()`:
+
+> The goal of the `here` package is to enable easy file referencing in project-oriented workflows
+
+```{r}
+list.files(here::here())
+```
+
+`here()` always starts at the top-level directory of a `.RProj`
+
+## `here::here()`
+
+```{r}
+here::here()
+```
+
+. . .
+
+```{r}
+list.files(here::here())
+```
+
+## Subfigures
+
+```         
+::: {#fig-penguins layout-nrow=2}
+
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+![Another blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Another orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+:::
+```
+
+## Subfigures
+
+::: {layout-nrow="2"}
+![Blue penguin](images/blue-penguin.png){width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+![Another blue penguin](images/blue-penguin.png){width="250px"}
+
+![Another orange penguin](images/orange-penguin.png){width="250px"}
+:::
+
+Two penguins, twice
+
+## Subfigures
+
+```         
+::: {layout-ncol="2"}
+![Blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+![Another blue penguin](images/blue-penguin.png){#fig-blue width="250px"}
+
+![Another orange penguin](images/orange-penguin.png){#fig-orange width="250px"}
+
+Two penguins, twice
+:::
+```
+
+::: {layout-ncol="2"}
+![Blue penguin](images/blue-penguin.png){width="250px"}
+
+![Orange penguin](images/orange-penguin.png){width="250px"}
+
+![Another blue penguin](images/blue-penguin.png){width="250px"}
+
+![Another orange penguin](images/orange-penguin.png){width="250px"}
+
+Two penguins, twice
+:::
+
+## Figure divs
+
+Note that the last paragraph in the div block is used as the figure caption.
+
+``` code
+::: {#fig-penguin}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI"></iframe>
+
+Baby penguin tries to make friends
+:::
+```
+
+::: {#fig-penguin-youtube}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI">
+
+</iframe>
+
+Baby penguin tries to make friends
+:::
+
+## Figure divs
+
+::: {layout-nrow="2"}
+![Blue penguin](images/blue-penguin.png){width="250px"}
+
+![Orange penguin](images/orange-penguin.png){width="250px"}
+
+![Another blue penguin](images/blue-penguin.png){width="250px"}
+
+::: {#fig-penguin-embed}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3uXXh1sHcI">
+
+</iframe>
+
+Baby penguin tries to make friends
+:::
+:::
+
+# Your turn
+
+::: task
+-   Open `figure-layout.qmd`
+-   Try out the various types of subfigures, changing the nrow/ncol
+:::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 5)
+```
+
+## Footnotes
+
+Pandoc supports numbering and formatting footnotes.
+
+## Inline footnotes
+
+```         
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+```
+
+Here is an inline note.[^2]
+
+[^2]: Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+
+## Inline footnotes
+
+```         
+Here is an footnore reference[^1]
+
+[^1]: This can be easy in some situations when you have a really long note or
+don't want to inline complex outputs.
+```
+
+. . .
+
+Here is an footnore reference[^3]
+
+[^3]: This can be easy in some situations when you have a really long note or don't want to inline complex outputs.
+
+. . .
+
+Notice in both situations that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.
+
+## Cross References
+
+Cross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to various entities like figures and tables.
+
+```         
+![Elephant](elephant.png){#fig-elephant}
+```
+
+. . .
+
+The presence of the caption (`Elephant`) and label (`#fig-elephant`) make this figure referenceable. This enables you to use the following syntax to refer to it elsewhere in the document:
+
+```         
+See @fig-elephant for an illustration.
+```
+
+. . .
+
+![](https://quarto.org/docs/authoring/images/crossref-figure.png){width="800px"}
+
+# Code
+
+## Anatomy of a code chunk
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: car-stuff
+#| message: false
+#| echo: fenced
+
+library(tidyverse)
+
+mtcars |> 
+  distinct(cyl)
+```
+
+:::
+
+::: {.column .fragment width="50%"}
+-   Has 3x backticks on each end
+-   Engine (`r`) is indicated between curly braces `{r}`
+-   Options stated with the `#|` (hashpipe): `#| option1: value`
+:::
+:::
+
+## Code, who is it for?
+
+::: incremental
+- The way you display code is very different for different contexts.
+- In a teaching scenario like today, I *really* want to display code.
+- In a business, you may want to have a data-science facing output which displays the source code AND a stakeholder-facing output which hides the code.
+:::
+
+## Code
+
+If you simply want code formatting but don't want to execute the code:
+
+- Option 1: Use 3x back ticks + the language ```` ```r ````
+
+````         
+```r
+head(mtcars)
+```
+````
+
+. . .
+
+- Option 2: Add `eval: false` as chunk option
+
+```{r}
+#| eval: false
+#| echo: fenced
+
+head(mtcars)
+```
+
+## Showing and hiding code with `echo`
+
+- The `echo` option shows the code when set to `true` and hides it when set to `false`.
+
+- If you want to both execute the code and return the full code including backticks (like in a teaching scenario) `echo: fenced` is your friend!
+
+```{r}
+#| echo: fenced
+
+1 + 1
+```
+
+## Diagrams w/ `mermaid`
+
+````         
+```{{mermaid}}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+````
+
+![](images/mermaid.jpeg)
+
+. . .
+
+[Mermaid example](https://mermaid.live/edit#pako:eNqVVFFvmzAQ_iuWo0ybBBWpRDbQFKkJSV86qUofSx8MPoIbYzNjllUk_72A44RFndqChM7ffff5fHemwamkgEO8UaTM0d06FuMxSjmpqgiyWFjLQHNeA0ollypEI98nfjZ1MsZ5OMom3etUWsktuDtGdR5el3-PQHgiS6HdHbBNrsNEcnq5wRroSZ9k3tQPjvrggQ_J__UN-VLu11ktDaaTwP9gtpb8Trb3RFCZnrbwgh9e4n0wYUO-VFwxbgs8mnz3_QDeytiW863o68-ExwK1z83XjIQZcVsquN04oKvfBf2G3Ct3huZNY7y9YyuYVl9EUpX953AwCnPDXQyEUKtgnAvjjJqmNPXaMZ3_TNTsriaopWpQlRWKkOvO9mgNpVR6j5aPg8xKmjnovB7a7k4q-jSUuFdQgdBEMyn2aPWo4A8Q_lz9E1XKHahSMqHRRbB8hlRXe3R7TGDDZdLWsrcTKbeoP_5TV8Hx-EG_cOjMvgno5nxXLDQ_TbdFFnZALRANR8qCS2d17qwFbwfNxg4uQBWE0fYKN90ZYqxzKCDGYWtSyEjNdYxjcWipdUmJhiVlWiocalWDg0mt5cOLSO3acCJG2h9CYcDDK9A0Zlk) and [Mermaid.js documentation](https://mermaid-js.github.io/mermaid/#/flowchart)

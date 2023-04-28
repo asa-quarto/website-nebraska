@@ -12,4 +12,6 @@ title: "Hello Quarto"
 
 ## Exercises
 
-- <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/1-hello-quarto/1-1-quarto-tour.qmd">{{< fa download >}} `1-1-quarto-tour.qmd`</i></a>
+- <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/exercises/hello-penguins.qmd">{{< fa download >}} `hello-penguins.qmd`</i></a>
+
+- <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/exercises/my-first-document.qmd">{{< fa download >}} `my-first-document.qmd`</i></a>

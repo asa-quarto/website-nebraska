@@ -5,7 +5,7 @@ institute: "Duke University + Posit"
 author: "Dr. Mine Çetinkaya-Rundel"
 date: "2023-04-28"
 footer: "[🔗 mine.quarto.pub/quarto-asa-nebraska](https://mine.quarto.pub/quarto-asa-nebraska)"
-logo: "../images/quarto.png"
+logo: "../images/logo.png"
 format:
   revealjs:
     theme: ../style/slides.scss
@@ -319,7 +319,7 @@ We learned from 10 years of literate programming with `knitr` + `rmarkdown`
 -   Quarto applies Lua filters + CSS/LaTeX which is then evaluated alongside the `.md` file by Pandoc and converted to a final output format
 :::
 
-## Aside: Lua filters
+## Aside: Lua filters {.smaller}
 
 -   Here is an example of a Lua filter that converts strong emphasis to small caps, from <https://pandoc.org/lua-filters.html>:
 

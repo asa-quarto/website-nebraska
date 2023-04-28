@@ -43,13 +43,10 @@ library(countdown)
 
 **Weave it all together**, and you have a beautiful, functional slide deck!
 
-## Our turn
+## Our turn {.smaller}
 
 ::: task
-Let's build a presentation together from `hello-penguins-slides.qmd`.
-:::
-
-## Highlights
+Let's build a presentation together from `hello-penguins-slides.qmd` and showcase the following features of Quarto presentations:
 
 -   Hierarchy, headers, and document outline
 
@@ -57,19 +54,18 @@ Let's build a presentation together from `hello-penguins-slides.qmd`.
 
 -   Columns
 
--   Fragments
-
 -   Code, output location, code highlighting
 
--   Title slide attributes
-
 -   Logo and footer
+
+-   Making things fit on a slide
 
 -   Chalkboard
 
 -   Multiplex
 
 -   Publishing your presentation to Quarto Pub
+:::
 
 ## Your turn
 
@@ -89,15 +85,26 @@ Pick up where we left off and
 countdown(minutes = 15)
 ```
 
+## Our turn
+
+::: task
+Let's continue building our a presentation together from `hello-penguins-slides.qmd` and showcase the following features of Quarto presentations:
+
+
+-   Fragments
+
+-   Title slide attributes
+:::
+
 # Wrap up
 
 ## Quarto presentation formats
 
 -   [`revealjs`](https://quarto.org/docs/presentations/revealjs) - essentially the replacement for `xaringan`, but with Pandoc-native syntax
 
--   `beamer` for LaTex slides
+-   `beamer` for LaTeX slides
 
--   Powerpoint for when you *have to* collaborate via MS Office
+-   PowerPoint for when you *have to* collaborate via MS Office
 
 ## Questions
 

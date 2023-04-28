@@ -10,6 +10,6 @@ title: "Hello Quarto"
 <iframe class="slide-deck" src="1-hello-quarto.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-## Activities
+## Exercises
 
-- `1-1-quarto-tour.qmd` <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/1-hello-quarto/1-hello-quarto.qmd">Download</a>
+- <a href="https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/1-hello-quarto/1-1-quarto-tour.qmd">{{< fa download >}} `1-1-quarto-tour.qmd`</i></a>

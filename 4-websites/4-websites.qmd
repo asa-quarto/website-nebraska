@@ -80,7 +80,7 @@ countdown(minutes = 15)
 
 # Wrap up
 
-## Freeze
+## Freeze {.smaller}
 
 -   The `freeze` option controls when/if computational documents be re-rendered during a global project render:
 

@@ -46,14 +46,13 @@ library(countdown)
 ## Our turn
 
 ::: task
-Let's build a website together from all of the documents we've created so far.
-:::
-
-## Highlights
+Let's build a website together from all of the documents we've created so far and highlight the following features of Quarto websites:
 
 -   `_quarto.yml`
 
 -   `index.qmd` / landing page
+
+-   Navigation
 
 -   Freeze
 
@@ -61,13 +60,16 @@ Let's build a website together from all of the documents we've created so far.
 
 -   Publishing
 
+-   An aspect of the workshop webpage that you fancy?
+:::
+
 ## Your turn
 
 ::: task
-Pick up where we left off and 
+Pick up where we left off and
 
-- Add an [about page](https://quarto.org/docs/websites/website-about.html).
-- Add a folder called `posts` and create a few minimal blog post entries. Then, using the [listings feature](https://quarto.org/docs/websites/website-listings.html), create a blog page for your website.
+-   Add an [about page](https://quarto.org/docs/websites/website-about.html).
+-   Add a folder called `posts` and create a few minimal blog post entries. Then, using the [listings feature](https://quarto.org/docs/websites/website-listings.html), create a blog page for your website.
 :::
 
 ```{r}
@@ -97,19 +99,19 @@ execute:
   freeze: false  # always re-render
 ```
 
-- The `freeze` option is typically added to a `_metadata.yml` file within a specific directory, affecting all files in that directory.
+-   The `freeze` option is typically added to a `_metadata.yml` file within a specific directory, affecting all files in that directory.
 
-- For blogs, set `feeze` in `_metadata.yml` at the root of the `posts` directory. 
+-   For blogs, set `feeze` in `_metadata.yml` at the root of the `posts` directory.
 
-- You can have it only within specific subdirectories for more complex sites.
+-   You can have it only within specific subdirectories for more complex sites.
 
 ## Freeze vs. cache
 
-- Cache stores the results of computations for a specific file.
+-   Cache stores the results of computations for a specific file.
 
-- Cache invalidation is triggered by changes in chunk source code (or other cache attributes you’ve defined).
+-   Cache invalidation is triggered by changes in chunk source code (or other cache attributes you've defined).
 
-- `cache` can also be set at the chunk level. Consider using the cache for computationally expensive chunks.
+-   `cache` can also be set at the chunk level. Consider using the cache for computationally expensive chunks.
 
 ## Publishing
 

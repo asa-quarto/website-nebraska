@@ -53,9 +53,9 @@ install.packages(pkg_list)
 
 # Welcome
 
-## Logistics
+## Logistics {.smaller}
 
--   WiFi: `TBA`
+-   WiFi: MedCenter Guest or eduroam
 
 -   Sli.do:
 
@@ -64,7 +64,9 @@ install.packages(pkg_list)
     -   Got to [https://slido.com](https://slido.com/) and use code: `#quarto`
     -   Or use this direct link <https://app.sli.do/event/wkQ3fmnKafwzDNKQNXK7FF>
 
--   Surroundings: Exits, restrooms, etc.
+-   Exits in the front of the room
+
+-   For restrooms, leave on the right (my right) of the room
 
 ## Code of Conduct {.smaller}
 

@@ -351,6 +351,62 @@ return {
 ![](https://quarto.org/docs/computations/images/python-vscode.png){.fragment fig-alt="A screenshot of a Quarto document rendered inside VSCode" width="1200"}
 :::
 
+# Navigating within RStudio
+
+## Quarto workflow
+
+Rendering a Quarto file in RStudio via the Render button calls `quarto render` in a **background job**, preventing Quarto rendering from cluttering up the R console, and gives you and easy way to stop:
+
+![](images/background-job.png){fig-align="center" width="800"}
+
+## Rendering
+
+1.  Option 1: In RStudio as a background job, and preview the output.
+
+. . .
+
+2.  Option 2: In the Terminal via `quarto render`:
+
+```{bash}
+#| eval: false
+#| echo: true
+
+quarto render document.qmd # defaults to html
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+. . .
+
+3.  Option 3: In the R console, via the `quarto` R package:
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(quarto)
+
+quarto_render("document.qmd") # defaults to html
+quarto_render("document.qmd", output_format = "pdf")
+```
+
+## Your turn
+
+::: task
+-   Open the last .qmd file you were working on in RStudio.
+-   Compare behavior of rendering with
+    -   RStudio \> Render,
+    -   using the CLI with `quarto render`, and
+    -   in the R console via `quarto::quarto_render()`.
+-   If you're an RStudio user, brainstorm why you might still want to know about the other two ways of rendering Quarto documents.
+:::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3)
+```
+
 # Quarto formats
 
 ## One install, "Batteries included"

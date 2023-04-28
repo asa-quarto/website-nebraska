@@ -39,6 +39,8 @@ website:
         contents:
           - href: 1-hello-quarto/index.qmd
             text: Hello Quarto
+          - href: 2-documents/index.qmd
+            text: Documents
 
   page-footer:
     right: "This page is built with 💛 and [Quarto](https://quarto.org/)."

@@ -1,0 +1,15 @@
+---
+title: "Hello Quarto"
+---
+
+## Slides
+
+[View slides in full screen](1-hello-quarto.html)
+
+```{=html}
+<iframe class="slide-deck" src="1-hello-quarto.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+## Activities
+
+- `1-1-quarto-tour.qmd` [Download]()

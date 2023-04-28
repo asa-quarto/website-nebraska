@@ -16,7 +16,7 @@ Prior to the workshop, please complete the following steps:
 #| eval: false
 
 pkg_list <- c(
-  "tidyverse", "gt", "gtExtras", "reactable", "ggiraph", "here", "quarto", "rmarkdown", "gtsummary", "palmerpenguins", "fs", "skimr"
-  )
+  "tidyverse", "gt", "ggthemes", "palmerpenguins"
+)
 install.packages(pkg_list)
 ```

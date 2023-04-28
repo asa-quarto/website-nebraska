@@ -37,7 +37,7 @@ website:
         text: Pre-work
       - section: "Modules"
         contents:
-          - href: slides/01-hello-quarto/01-hello-quarto.qmd
+          - href: 1-hello-quarto/index.qmd
             text: Hello Quarto
 
   page-footer:

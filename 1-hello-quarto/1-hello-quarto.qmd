@@ -1,6 +1,21 @@
 ---
 title: "Hello Quarto"
-format: revealjs
+subtitle: "ASA Traveling Course: From R Markdown to Quarto"
+institute: "Duke University + Posit"
+author: "Dr. Mine Çetinkaya-Rundel"
+date: "2023-04-28"
+footer: "[🔗 ADD LINK](https://QUARTO.org/)"
+logo: "../images/quarto.png"
+format:
+  revealjs:
+    theme: ../style/slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
 ---
 
 ```{r}
@@ -100,12 +115,12 @@ countdown(minutes = 2)
 
 ## Getting help
 
-- During **my turn** and **our turn** segments -- raise your hand
+-   During **my turn** and **our turn** segments -- raise your hand
 
-- During **your turn** segments -- also feel free to raise your hand for questions but use the stickies to signal:
+-   During **your turn** segments -- also feel free to raise your hand for questions but use the stickies to signal:
 
-    - Light green: I'd like some help / I'm stuck / I'm lost
-    - Dark green: I'm done
+    -   Light green: I'd like some help / I'm stuck / I'm lost
+    -   Dark green: I'm done
 
 # Hello Quarto
 
@@ -210,3 +225,4 @@ Let's get started!
 Sit back and enjoy!
 :::
 
+## Your turn:

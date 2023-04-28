@@ -12,4 +12,4 @@ title: "Hello Quarto"
 
 ## Activities
 
-- `1-1-quarto-tour.qmd` [Download]()
+- `1-1-quarto-tour.qmd` [Download](https://raw.githubusercontent.com/mine-cetinkaya-rundel/quarto-asa-nebraska/main/1-hello-quarto/1-hello-quarto.qmd)

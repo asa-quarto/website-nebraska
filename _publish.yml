@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 2d3ac405-b93a-43a6-bb41-534283e094a3
+      url: 'https://mine.quarto.pub/quarto-asa-nebraska'

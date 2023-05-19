@@ -6,7 +6,7 @@ project:
 website:
   page-navigation: true
   title: "From R Markdown to Quarto"
-  description: "ASA Traveling Course 2023 - Nebraska Chapter - From R Markdown to Quarto"
+  description: "ASA Traveling Course 2023 - From R Markdown to Quarto"
 
   repo-url: https://github.com/mine-cetinkaya-rundel/quarto-asa
   repo-actions: [edit, issue]

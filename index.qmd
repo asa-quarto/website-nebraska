@@ -1,39 +1,39 @@
 ---
 title: "From R Markdown to Quarto"
-subtitle: "ASA Traveling Course 2023 - Nebraska Chapter"
+subtitle: "ASA Traveling Course 2023"
 ---
 
 This workshop is designed for those who want to take their R Markdown skills and expertise and apply them in Quarto, the next generation of R Markdown. Quarto is an open-source scientific and technical publishing system that offers multilingual programming language support to create dynamic and static documents, books, presentations, blogs, and other online resources. In this workshop you will learn how to apply your reproducible authoring skills to the Quarto format and learn about new tools and workflows for authoring with Quarto in RStudio. You will learn to create static documents as well as slide presentations. The workshop will also introduce you to Quarto projects which you can use to build websites and write blogs and books. Finally, you will learn various ways to deploy and publish your Quarto projects on the web.
 
-This workshop is hosted by the [ASA Nebraska Chapter](https://community.amstat.org/amstatnebraska/home) and supported by the [ASA Traveling Course](https://community.amstat.org/coc/chapterresources/travelingcourse) program.
+This workshop is supported by the [ASA Traveling Course](https://community.amstat.org/coc/chapterresources/travelingcourse) program.
 
-## Date + location
+<!-- ## Date + location -->
 
-🗓️ Friday, April 28
+<!-- 🗓️ Friday, April 28 -->
 
-🏢 University of Nebraska Medical Center (UNMC)
+<!-- 🏢 University of Nebraska Medical Center (UNMC) -->
 
 ## Schedule
 
-+-------------------+------------------------------------------------+
-| Time              | Module                                         |
-+===================+================================================+
-| 09:00 - 10:30     | [Hello Quarto](1-hello-quarto/index.qmd)       |
-+-------------------+------------------------------------------------+
-| 10:30 - 11:00     | Break ☕                                       |
-+-------------------+------------------------------------------------+
-| 11:00 - 12:30     | [Documents](2-documents/index.qmd)             |
-+-------------------+------------------------------------------------+
-| 12:30 - 13:30     | Lunch 🍽️                                       |
-+-------------------+------------------------------------------------+
-| 13:30 - 15:00     | [Presentations](3-presentations/index.qmd)     |
-+-------------------+------------------------------------------------+
-| 15:00 - 15:30     | Break ☕                                       |
-+-------------------+------------------------------------------------+
-| 15:30 - 17:00     | [Websites](4-websites/index.qmd)               |
-|                   |                                                |
-|                   | Time permitting: Journal articles              |
-+-------------------+------------------------------------------------+
++---------------+--------------------------------------------+
+| Time          | Module                                     |
++===============+============================================+
+| 09:00 - 10:30 | [Hello Quarto](1-hello-quarto/index.qmd)   |
++---------------+--------------------------------------------+
+| 10:30 - 11:00 | Break ☕                                   |
++---------------+--------------------------------------------+
+| 11:00 - 12:30 | [Documents](2-documents/index.qmd)         |
++---------------+--------------------------------------------+
+| 12:30 - 13:30 | Lunch 🍽️ \| \| \|                          |
++---------------+--------------------------------------------+
+| 13:30 - 15:00 | [Presentations](3-presentations/index.qmd) |
++---------------+--------------------------------------------+
+| 15:00 - 15:30 | Break ☕                                   |
++---------------+--------------------------------------------+
+| 15:30 - 17:00 | [Websites](4-websites/index.qmd)           |
+|               |                                            |
+|               | Time permitting: Journal articles          |
++---------------+--------------------------------------------+
 
 ## Instructors
 
